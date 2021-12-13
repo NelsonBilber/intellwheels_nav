@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:macro name="rplidar" params="prefix right:=0 back:=0">
+
+		<xacro:property name="left" value="${1 - right}"/>
+		<xacro:property name="front" value="${1 - back}"/>
+		<xacro:property name="front_angle_calib" value="${0.075*PI}"/>
+		<xacro:property name="back_angle_calib" value="0"/>
+		
+
+		<link name="${prefix}_rplidar_link">
+			<inertial>
+				<mass value="1"/>
+				<xacro:insert_block name="default_inertia"/>
+			</inertial>
+
+			<visual>
+				<geometry>
+					<mesh filename="package://intellwheels_desc/meshes/rplidar.dae"/>
+				</geometry>
+			</visual>
+		</link>
+
+		<joint name="${prefix}_rplidar_joint" type="fixed">
+			<origin
+				xyz="${front * 0.578 - back * 0.377} ${back * 0.245 - front * 0.235} ${back*(0.41-0.17) + front*(0.41-0.17)}"
+				rpy="0 0 ${front*(PI + front_angle_calib) + back*(0+back_angle_calib)}"/>
+			<parent link="base_link"/>
+			<child link="${prefix}_rplidar_link"/>
+		</joint>
+
+	</xacro:macro>
+
+</robot>

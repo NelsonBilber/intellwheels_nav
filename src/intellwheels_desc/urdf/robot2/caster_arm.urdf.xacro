@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:macro name="caster_arm" params="prefix right:=0 back:=0">
+		
+		<xacro:property name="left" value="${1 - right}"/>
+		<xacro:property name="front" value="${1 - back}"/>
+
+		<link name="${prefix}_caster_arm_link">
+			<inertial>
+				<mass value="0.5"/>
+				<xacro:insert_block name="default_inertia"/>
+			</inertial>
+
+			<visual>
+				<geometry>
+					<mesh filename="package://intellwheels_desc/meshes/caster_arm.dae"/>
+				</geometry>
+			</visual>
+		</link>
+
+		<joint name="${prefix}_caster_arm_joint" type="continuous">
+			<origin xyz="${front * 0.35 - back * 0.392} ${left * 0.196 - right * 0.21} 0.122" rpy="0 0 ${-PI/2}" />
+			<parent link="base_link"/>
+			<child link="${prefix}_caster_arm_link"/>
+			<axis xyz="0 0 1"/>
+		</joint>
+
+	</xacro:macro>
+
+</robot>

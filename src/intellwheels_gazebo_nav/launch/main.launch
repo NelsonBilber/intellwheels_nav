@@ -5,9 +5,12 @@
 
 	<!-- model description -->
 	<include file="$(find intellwheels_desc)/launch/wheelchair.launch"/>
+	<include file="$(find intellwheels_desc)/launch/wheelchair2.launch"/>
 
 	<!-- model spawner -->
 	<node name="spawner" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model wheelchair"/>
+	<!--<node name="spawner2" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model wheelchair2 -x 2"/>-->
+
 
 	<!-- rviz -->
 	<node name="rviz" pkg="rviz" type="rviz" args="--display-config $(arg pkg)/rviz/$(arg world).rviz" output="screen"/>

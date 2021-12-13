@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:macro name="realsense">
+
+		<link name="realsense_optical_link"/>
+
+		<link name="realsense_support_link">
+			<inertial>
+				<mass value="1"/>
+				<xacro:insert_block name="default_inertia"/>
+			</inertial>
+
+			<visual>
+				<geometry>
+					<box size="0.01 0.1 0.3"/>
+				</geometry>
+			</visual>
+		</link>
+
+		<link name="realsense_link">
+			<inertial>
+				<mass value="1"/>
+				<xacro:insert_block name="default_inertia"/>
+			</inertial>
+
+			<visual>
+				<origin rpy="0 ${PI / 2} 0"/>
+				<geometry>
+					<cylinder radius="0.0305" length="0.026"/>
+				</geometry>
+			</visual>
+		</link>
+
+		<joint name="realsense_support_joint" type="fixed">
+			<origin xyz="-0.4 0 0.9" rpy="0 0.1 0"/>
+			<parent link="base_link"/>
+			<child link="realsense_support_link"/>
+		</joint>
+
+		<joint name="realsense_joint" type="fixed">
+			<origin xyz="0.01 0 0.1"/>
+			<parent link="realsense_support_link"/>
+			<child link="realsense_link"/>
+		</joint>
+
+		<joint name="realsense_optical_joint" type="fixed">
+			<origin rpy="${-PI / 2} 0 ${-PI / 2}"/>
+			<parent link="realsense_link"/>
+			<child link="realsense_optical_link"/>
+		</joint>
+
+	</xacro:macro>
+
+</robot>
