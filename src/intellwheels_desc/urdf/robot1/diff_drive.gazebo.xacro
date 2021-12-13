@@ -13,7 +13,7 @@
 				<commandTopic>cmd_vel</commandTopic>
 				<odometryTopic>odom</odometryTopic>
 				<odometryFrame>odom</odometryFrame>
-				<robotBaseFrame>base_footprint</robotBaseFrame>
+				<robotBaseFrame>base_footprint_v2</robotBaseFrame>
 				<odometrySource>world</odometrySource>
 				<publishWheelTF>false</publishWheelTF>
 				<publishOdomTF>${pub_odom}</publishOdomTF>

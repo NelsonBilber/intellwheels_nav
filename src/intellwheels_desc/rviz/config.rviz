@@ -61,7 +61,7 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_footprint:
+        base_footprint_v2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -155,7 +155,7 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_footprint:
+        base_footprint_v2:
           Value: true
         base_link:
           Value: true
@@ -197,7 +197,7 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_footprint:
+        base_footprint_v2:
           {}
         base_link:
           left_back_caster_arm_link:

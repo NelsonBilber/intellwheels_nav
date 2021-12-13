@@ -8,7 +8,7 @@
 		<xacro:property name="dimZ" value="1.00"/> <!-- sem o apoio da cabeca -->
 		<xacro:property name="height" value="0.17"/> <!-- A origem da base.dae esta' no meio dos centros das rodas grandes-->
 
-		<link name="base_footprint"/>
+		<link name="base_footprint_v2"/>
 
 		<link name="base_link">
 			<inertial>
@@ -42,7 +42,7 @@
 		</link>
 
 		<joint name="base_joint" type="fixed">
-			<parent link="base_footprint"/>
+			<parent link="base_footprint_v2"/>
 			<child link="base_link" />
 			<origin xyz="0 0 ${height}"/>
 		</joint>

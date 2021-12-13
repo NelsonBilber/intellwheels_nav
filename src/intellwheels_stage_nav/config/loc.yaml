@@ -1,6 +1,6 @@
 odom_frame_id: odom
 global_frame_id: /map
-base_frame_id: base_footprint
+base_frame_id: base_footprint_v2
 delta_x: 0
 delta_y: 0
 delta_yaw: 0

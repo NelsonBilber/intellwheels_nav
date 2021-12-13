@@ -1,4 +1,4 @@
-robot_base_frame: base_footprint
+robot_base_frame: base_footprint_v2
 footprint: [[-0.5, -0.325], [0.7, -0.325], [0.7, 0.325], [-0.5, 0.325]]
 publish_frequency: 30
 

@@ -51,7 +51,7 @@ Visualization Manager:
         All Enabled: true
         base_laser_link_3:
           Value: true
-        jeeves/base_footprint:
+        jeeves/base_footprint_v2:
           Value: true
         jeeves/base_link:
           Value: true
@@ -70,7 +70,7 @@ Visualization Manager:
       Show Names: true
       Tree:
         jeeves/odom:
-          jeeves/base_footprint:
+          jeeves/base_footprint_v2:
             jeeves/base_link:
               base_laser_link_3:
                 {}
