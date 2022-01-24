@@ -6,8 +6,6 @@
 	<!-- model description -->
 	<include file="$(find intellwheels_desc)/launch/wheelchair.launch"/>
 
-	<!-- model spawner -->
-	<node name="spawner" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model wheelchair"/>
 
 	<!-- rviz -->
 	<node name="rviz" pkg="rviz" type="rviz" args="--display-config $(arg pkg)/rviz/$(arg world).rviz" output="screen"/>
@@ -22,9 +20,9 @@
 	<node name="map_server" pkg="map_server" type="map_server" args="$(arg pkg)/worlds/$(arg world)/$(arg world).yaml" output="screen"/>
 
 	<!-- relay scan data to the same topic so amcl can use it -->
+	
 	<group>
 		<node name="right_front_rplidar_scan_relay" pkg="topic_tools" type="relay" args="right_front_rplidar_scan base_scan"/>
-		
 		<node name="left_back_rplidar_scan_relay" pkg="topic_tools" type="relay" args="left_back_rplidar_scan base_scan"/>
 	</group>
 
