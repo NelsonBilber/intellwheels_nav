@@ -226,7 +226,7 @@ $ roslaunch intellwheels_multi_chairs empty_office_no_gazebo.launch
 
 ## How to use multiple robots from the same model in Gazebo
 
-It necessary to define a namespace, prefix, a frame and **don't forget to repeat the parameter description inside the namespace with proper perfix !!! **
+It necessary to define a namespace, prefix, a frame and **don't forget to repeat the parameter description inside the namespace with proper perfix !!!**
 
 **-param /robot1/robot_description"**
 
