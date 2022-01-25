@@ -86,7 +86,7 @@ if __name__ == '__main__':
 
             traing_log.save(tepisode, tstep ,str(qlearn.alpha),str(qlearn.gamma), str(initial_epsilon), epsilon_discount , str(cumulated_reward) , highest_reward , f_time )
        
-            if not(collision):
+            if not(collision) or not(goal) :
                 state = nextState
             else:
                 rospy.logdebug("DONE EPISODE!")
