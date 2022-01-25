@@ -96,7 +96,7 @@ if __name__ == '__main__':
                     json.dump(param_dictionary, outfile)
 
 
-            if collision or done:
+            if collision or goal:
 
                 agent.updateTargetModel()
                 scores.append(score)
