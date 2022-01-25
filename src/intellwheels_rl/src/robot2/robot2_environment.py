@@ -220,7 +220,7 @@ class Env():
         self.trajectory_log.save(episode, step, self.pose_r1.position.x, self.pose_r1.position.y, 
                                                 self.pose_r2.position.x, self.pose_r2.position.y)
 
-        print("Robot2: %f %f  ", self.pose_r2.position.x, self.pose_r2.position.y )
+        # print("Robot2: %f %f  ", self.pose_r2.position.x, self.pose_r2.position.y )
 
         return np.asarray(state), reward, collision, self.get_goal
 
