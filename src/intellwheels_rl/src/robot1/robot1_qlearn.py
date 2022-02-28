@@ -80,11 +80,13 @@ if __name__ == '__main__':
 
             qlearn.learn(state, action, reward, nextState)
 
-            m, s = divmod(int(time.time() - start_time), 60)
-            h, m = divmod(m, 60)
-            f_time = str(h) + ":" + str(m)  + ":" + str(s)
+            print("Episode: ", tepisode, " step: ", tstep)
 
-            traing_log.save(tepisode, tstep ,str(qlearn.alpha),str(qlearn.gamma), str(initial_epsilon), epsilon_discount , str(cumulated_reward) , highest_reward , f_time )
+            #m, s = divmod(int(time.time() - start_time), 60)
+            #h, m = divmod(m, 60)
+            #f_time = str(h) + ":" + str(m)  + ":" + str(s)
+
+            #traing_log.save(tepisode, tstep ,str(qlearn.alpha),str(qlearn.gamma), str(initial_epsilon), epsilon_discount , str(cumulated_reward) , highest_reward , f_time )
        
             if not(collision) or not(goal) :
                 state = nextState
@@ -93,7 +95,15 @@ if __name__ == '__main__':
                 last_time_steps = np.append(last_time_steps, [int(tstep + 1)])
                 break
 
+        
+        
+        m, s = divmod(int(time.time() - start_time), 60)
+        h, m = divmod(m, 60)
+        f_time = str(h) + ":" + str(m)  + ":" + str(s)
+
+        traing_log.save(tepisode, tstep ,str(qlearn.alpha),str(qlearn.gamma), str(initial_epsilon), epsilon_discount , str(cumulated_reward) , highest_reward , f_time )
         rospy.logwarn( ("EP: "+str(tepisode+1)+" - [alpha: "+str(qlearn.alpha)+" - gamma: "+str(qlearn.gamma)+" - epsilon: "+str(qlearn.epsilon)+"] - Reward: "+str(cumulated_reward)+"     Time: %d:%02d:%02d" % (h, m, s)))
+
 
     l = last_time_steps.tolist()
     l.sort()

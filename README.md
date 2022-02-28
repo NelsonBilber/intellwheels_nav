@@ -39,6 +39,9 @@ virtualenv
 Keras = 2.1.5
 
 tensorflow-gpu = 1.14.0
+
+sudo apt install swig
+
 ```
 
 ### Open AI ROS
@@ -46,9 +49,10 @@ tensorflow-gpu = 1.14.0
 ```
 git clone git clone https://bitbucket.org/theconstructcore/openai_ros.git
 
-catkin_make
 
 source devel/setup.bash
+
+catkin_make
 
 rosdep install openai_ros
 ```

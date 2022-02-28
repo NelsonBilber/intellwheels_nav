@@ -39,9 +39,6 @@ catkin_package(
 catkin_install_python(PROGRAMS
   src/algorithms/dqn.py
   src/algorithms/qlearn.py
-  src/robot_gazebo_nav/base_robot_dqn.py
-  src/robot_gazebo_nav/base_robot_environment.py 
-  src/robot_gazebo_nav/respawnGoal.py
   src/robot1/robot1_dqn.py
   src/robot1/robot1_environment.py
   src/robot1/respawnGoal.py
