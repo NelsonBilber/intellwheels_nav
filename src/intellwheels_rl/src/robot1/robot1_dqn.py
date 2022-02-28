@@ -115,21 +115,21 @@ if __name__ == '__main__':
                 param_dictionary = dict(zip(param_keys, param_values))
                 break
 
-            m, s = divmod(int(time.time() - start_time), 60)
-            h, m = divmod(m, 60)
-            
-            #rospy.loginfo('Ep: %d score: %.2f memory: %d epsilon: %.2f time: %d:%02d:%02d',
-            #                e, score, len(agent.memory), agent.epsilon, h, m, s)
-
-            # save log 
-
-            f_time = str(h) + ":" + str(m)  + ":" + str(s)
-            traing_log.save(e, score, np.max(agent.q_value), agent.epsilon, f_time, str(collision), str(goal))
-
             global_step += 1
             
             if global_step % agent.target_update == 0:
                 rospy.loginfo("UPDATE TARGET NETWORK")
+
+        m, s = divmod(int(time.time() - start_time), 60)
+        h, m = divmod(m, 60)
+
+        #rospy.loginfo('Ep: %d score: %.2f memory: %d epsilon: %.2f time: %d:%02d:%02d',
+        #                e, score, len(agent.memory), agent.epsilon, h, m, s)
+
+        # save log 
+
+        f_time = str(h) + ":" + str(m)  + ":" + str(s)
+        traing_log.save(e, score, np.max(agent.q_value), agent.epsilon, f_time, str(collision), str(goal))
     
         if agent.epsilon > agent.epsilon_min:
             agent.epsilon *= agent.epsilon_decay
