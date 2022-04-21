@@ -33,7 +33,7 @@ This repository is a fork from [Intellwheels Navigation](https://github.com/sife
 
 Ubuntu 18.04 LTS
 
-ROS **Melodic**
+ROS Melodic
 
 Python 2.7
 
