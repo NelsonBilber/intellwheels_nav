@@ -136,6 +136,7 @@ class Env():
             self.goal_x, self.goal_y = self.respawn_goal.getPosition(True)
             self.goal_distance = self.getGoalDistance()
             self.get_goalbox = False
+            self.reset()
             #save log
             self.goal_log.save(self.current_episode, self.curent_step, 'goal')
 
